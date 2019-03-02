@@ -1,77 +1,56 @@
 import React, { PureComponent } from 'react';
-import { Text, View, KeyboardAvoidingView } from 'react-native';
+import { View } from 'react-native';
 import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Card from '../components/Card';
 
 export default class Home extends PureComponent {
   static navigationOptions = {
     header: null,
   };
 
-  handleDocPress = () => {
-    this.props.navigation.navigate('Documentacao');
-  };
-  handleBuscaPress = () => {
+  componentDidMount = () => {
     this.props.navigation.navigate('BuscaAlunos');
-  };
-
-  handleRecadosPress = () => {
-    this.props.navigation.navigate('Recados');
   };
 
   render() {
     return (
-      <KeyboardAvoidingView>
+      <View>
         <Container>
           <Header>
-            <Text
-              style={{ fontSize: 30, color: 'white', fontFamily: 'Monoton-Regular' }}
-            >{`{SCDE}`}</Text>
-            <Text style={{ fontSize: 10, color: 'white', fontFamily: 'FiraCode-Regular' }}>
-              Sistema de Consulta de Dados Escolares
-            </Text>
+            <HeaderTitle>{`{SCDE}`}</HeaderTitle>
+            <HeaderSubtitle>Sistema de Consulta de Dados Escolares</HeaderSubtitle>
           </Header>
 
-          <Card onPress={this.handleBuscaPress}>
-            <Icon name="searchengin" size={94} style={{ color: '#f2b632' }} />
-            <CardText>Busca Alunos</CardText>
-          </Card>
-          <Card onPress={this.handleDocPress}>
-            <Icon name="id-card" size={94} style={{ color: '#f2b632' }} />
+          <Card
+            route="BuscaAlunos"
+            text="Busca Alunos"
+            icon="searchengin"
+            navigation={this.props.navigation}
+          />
+          <Card
+            route="Documentacao"
+            text="Documentação"
+            icon="id-card"
+            navigation={this.props.navigation}
+          />
+          <Card
+            route="Recados"
+            text="Recados"
+            icon="sticky-note"
+            navigation={this.props.navigation}
+          />
 
-            <CardText>Documentação</CardText>
-          </Card>
-          <Card onPress={this.handleRecadosPress}>
-            <Icon
-              name="sticky-note"
-              size={94}
-              style={{ color: '#f2b632', fontFamily: 'FiraCode-Regular' }}
-            />
-            <CardText>Recados</CardText>
-          </Card>
           <View>
             <BottomText>
               made with <Ionicons name="ios-heart" color="red" />
             </BottomText>
           </View>
         </Container>
-      </KeyboardAvoidingView>
+      </View>
     );
   }
 }
-
-const Card = styled.TouchableOpacity`
-  background-color: white;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  width: 70%;
-  height: 25%;
-  border-radius: 25px;
-  margin-top: 4%;
-`;
 
 const Container = styled.View`
   background-color: #f2b632;
@@ -86,17 +65,20 @@ const Header = styled.View`
   padding: 5px;
 `;
 
-const Button = styled.TouchableOpacity`
-  border: 1px solid;
-`;
-
-const CardText = styled.Text`
-  font-family: 'FiraCode-Regular';
-  font-size: 20px;
-`;
 const BottomText = styled.Text`
   font-family: 'FiraCode-Regular';
   font-size: 10px;
   text-align: right;
   padding-right: 10px;
+`;
+
+const HeaderTitle = styled.Text`
+  font-size: 30;
+  color: white;
+  font-family: 'Monoton-Regular';
+`;
+const HeaderSubtitle = styled.Text`
+  font-size: 10;
+  color: white;
+  font-family: 'FiraCode-Regular';
 `;
