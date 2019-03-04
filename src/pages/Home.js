@@ -3,14 +3,20 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Card from '../components/Card';
-
+import api from '../services/api';
+import { AsyncStorage } from 'react-native';
+import { Container, BottomText, HeaderTitle, HeaderSubtitle } from './styles';
 export default class Home extends PureComponent {
   static navigationOptions = {
     header: null,
   };
 
+  state = {
+    alunos: [],
+  };
+
   componentDidMount = () => {
-    this.props.navigation.navigate('BuscaAlunos');
+    this.props.navigation.navigate('Recados');
   };
 
   render() {
@@ -52,33 +58,10 @@ export default class Home extends PureComponent {
   }
 }
 
-const Container = styled.View`
-  background-color: #f2b632;
-  height: 100%;
-`;
-
 const Header = styled.View`
   background-color: #0e174d;
   color: white;
   align-items: center;
   justify-content: center;
   padding: 5px;
-`;
-
-const BottomText = styled.Text`
-  font-family: 'FiraCode-Regular';
-  font-size: 10px;
-  text-align: right;
-  padding-right: 10px;
-`;
-
-const HeaderTitle = styled.Text`
-  font-size: 30;
-  color: white;
-  font-family: 'Monoton-Regular';
-`;
-const HeaderSubtitle = styled.Text`
-  font-size: 10;
-  color: white;
-  font-family: 'FiraCode-Regular';
 `;

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { CardText, CardButton } from './styles';
 
 export default class Card extends PureComponent {
   render() {
@@ -17,20 +17,3 @@ export default class Card extends PureComponent {
     );
   }
 }
-
-const CardButton = styled.TouchableOpacity`
-  background-color: white;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  width: 70%;
-  height: 25%;
-  border-radius: 25px;
-  margin-top: 4%;
-`;
-
-const CardText = styled.Text`
-  font-family: 'FiraCode-Regular';
-  font-size: 20px;
-`;

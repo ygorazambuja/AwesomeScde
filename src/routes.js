@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BuscaAlunos from './pages/BuscaAlunos';
 import Documentacao from './pages/Documentacao';
 import Recados from './pages/Recados';
+import Detalhes from './pages/Detalhes';
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -17,6 +18,9 @@ const AppNavigator = createStackNavigator({
   },
   Recados: {
     screen: Recados,
+  },
+  Detalhes: {
+    screen: Detalhes,
   },
 });
 

@@ -6,7 +6,7 @@ export default class Aluno extends PureComponent {
     const { aluno } = this.props;
     return (
       <Container>
-        <Button>
+        <Button onPress={() => this.props.navigation.navigate('Detalhes', { aluno })}>
           <ButtonText>{aluno.nome}</ButtonText>
         </Button>
       </Container>
