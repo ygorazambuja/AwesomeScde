@@ -25,16 +25,6 @@ export const HeaderText = styled.Text`
   font-size: 25px;
 `;
 
-export const InputCard = styled.TextInput`
-  background-color: white;
-  border-radius: 25px;
-  padding: 10px;
-  margin: 2%;
-  text-align: center;
-  font-family: 'FiraCode-Regular';
-  font-size: 16px;
-`;
-
 export const BackButton = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: flex-start;
@@ -73,4 +63,27 @@ export const HeaderSubtitle = styled.Text`
 export const ScrollContainer = styled.ScrollView`
   background-color: #f2b632;
   height: 100%;
+`;
+
+export const InputCard = styled.TextInput`
+  padding: 10px;
+  margin-right: 30%;
+  text-align: center;
+  font-family: 'FiraCode-Regular';
+  font-size: 10px;
+`;
+
+export const InputGroup = styled.View`
+  margin-top: 10px;
+  border-radius: 25px;
+  background-color: white;
+  flex-direction: row;
+  height: 60px;
+`;
+
+export const InputSendButton = styled.TouchableOpacity`
+  background-color: #0e174d;
+  border: solid 1px;
+  border-radius: 25px;
+  width: 30%;
 `;

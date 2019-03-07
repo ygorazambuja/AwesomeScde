@@ -3,8 +3,6 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Card from '../components/Card';
-import api from '../services/api';
-import { AsyncStorage } from 'react-native';
 import { Container, BottomText, HeaderTitle, HeaderSubtitle } from './styles';
 export default class Home extends PureComponent {
   static navigationOptions = {

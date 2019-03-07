@@ -6,6 +6,8 @@ export default class CardRecado extends PureComponent {
   render() {
     const { recado } = this.props;
 
+    const date = new Date(recado.createAt);
+
     return (
       <Card>
         <CardAuthor>{recado.author}</CardAuthor>
@@ -20,12 +22,12 @@ export default class CardRecado extends PureComponent {
         </CardIcons>
         <CardStatus>
           <CardDate>
-            Postado:
-            {recado.date}
+            Postado :
+            {` ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}
           </CardDate>
           <CardTime>
-            as:
-            {recado.time}
+as :
+            {` ${date.getHours()}:${date.getMinutes()}`}
           </CardTime>
         </CardStatus>
       </Card>
@@ -49,6 +51,7 @@ const CardAuthor = styled.Text`
   font-family: 'FiraCode-Regular';
   font-size: 10px;
   padding-top: 5px;
+  margin-top: 12px;
   margin-right: 60%;
 `;
 const CardContent = styled.Text`
@@ -67,14 +70,18 @@ const CardStatus = styled.View`
   flex-direction: row;
 `;
 const CardDate = styled.Text`
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 10px;
   font-size: 8px;
+  font-family: 'FiraCode-Regular';
+  margin-bottom: 4%;
 `;
 const CardTime = styled.Text`
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 10px;
   font-size: 8px;
+  font-family: 'FiraCode-Regular';
+  margin-bottom: 4%;
 `;
