@@ -42,8 +42,6 @@ export default class Recados extends Component {
   };
 
   handleSendRecado = async () => {
-    const author = 'Ygor Azambuja';
-
     const recado = {
       author: 'Ygor Azambuja',
       content: this.state.content,

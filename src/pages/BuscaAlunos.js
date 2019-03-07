@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import Aluno from '../components/Aluno';
-import api from '../services/api';
 import { FlatList } from 'react-native';
 
 import { Container, Header, HeaderText, InputCard, BackButton, TableContainer } from './styles';
