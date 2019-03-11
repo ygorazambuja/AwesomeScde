@@ -6,16 +6,23 @@
 
 ## Libs utilizadas
 
-- [react-navigation](https://reactnavigation.org/en/)
-- [styled-components](https://www.styled-components.com/)
-- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
-- [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
+-   [react-navigation](https://reactnavigation.org/en/)
+-   [styled-components](https://www.styled-components.com/)
+-   [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+-   [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler)
 
 ## Libs de Desenvolvimento
 
-- [eslint](https://eslint.org/)
-- [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-- [jest](https://jestjs.io/en/)
+-   [eslint](https://eslint.org/)
+-   [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+-   [jest](https://jestjs.io/en/)
+
+## Cuidados ao Clonar o Código
+
+react-native link react-native-vector-icons
+react-native link react-native-gesture-handler
+react-native link react-navigation
+react-native link
 
 ## Preview Images
 

@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import styled from 'styled-components/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Card from '../components/Card';
-import { Container, BottomText, HeaderTitle, HeaderSubtitle } from './styles';
 export default class Home extends PureComponent {
   static navigationOptions = {
     header: null,
@@ -13,9 +12,7 @@ export default class Home extends PureComponent {
     alunos: [],
   };
 
-  componentDidMount = () => {
-    this.props.navigation.navigate('Recados');
-  };
+  componentDidMount = () => {};
 
   render() {
     return (
@@ -25,7 +22,6 @@ export default class Home extends PureComponent {
             <HeaderTitle>{`{SCDE}`}</HeaderTitle>
             <HeaderSubtitle>Sistema de Consulta de Dados Escolares</HeaderSubtitle>
           </Header>
-
           <Card
             route="BuscaAlunos"
             text="Busca Alunos"
@@ -44,7 +40,6 @@ export default class Home extends PureComponent {
             icon="sticky-note"
             navigation={this.props.navigation}
           />
-
           <View>
             <BottomText>
               made with <Ionicons name="ios-heart" color="red" />
@@ -62,4 +57,27 @@ const Header = styled.View`
   align-items: center;
   justify-content: center;
   padding: 5px;
+`;
+
+const BottomText = styled.Text`
+  font-family: 'FiraCode-Regular';
+  font-size: 10px;
+  text-align: right;
+  padding-right: 10px;
+`;
+
+const Container = styled.View`
+  background-color: #f2b632;
+  height: 100%;
+`;
+
+const HeaderTitle = styled.Text`
+  font-size: 30;
+  color: white;
+  font-family: 'Monoton-Regular';
+`;
+const HeaderSubtitle = styled.Text`
+  font-size: 10;
+  color: white;
+  font-family: 'FiraCode-Regular';
 `;
