@@ -114,28 +114,6 @@ const BackButton = styled.TouchableOpacity`
   margin-right: 20%;
 `;
 
-const TableContainer = styled.ScrollView`
-  display: flex;
-  padding: 5px;
-  background-color: white;
-  margin: auto;
-  width: 94%;
-  height: 70%;
-  border-radius: 25px;
-  flex-grow: 1;
-`;
-
-const HeaderTitle = styled.Text`
-  font-size: 30;
-  color: white;
-  font-family: 'Monoton-Regular';
-`;
-const HeaderSubtitle = styled.Text`
-  font-size: 10;
-  color: white;
-  font-family: 'FiraCode-Regular';
-`;
-
 const ScrollContainer = styled.ScrollView`
   background-color: #f2b632;
   height: 100%;
