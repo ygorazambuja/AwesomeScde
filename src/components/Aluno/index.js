@@ -3,10 +3,11 @@ import styled from 'styled-components/native';
 
 export default class Aluno extends PureComponent {
   render() {
+    const { navigation } = this.props;
     const { aluno } = this.props;
     return (
       <Container>
-        <Button onPress={() => this.props.navigation.navigate('Detalhes', { aluno })}>
+        <Button onPress={() => navigation.navigate('Detalhes', { aluno })}>
           <ButtonText>{aluno.nome}</ButtonText>
         </Button>
       </Container>

@@ -1,5 +1,9 @@
 import React from 'react';
-
+import { YellowBox } from 'react-native';
 import Routes from './routes';
 
-export default props => <Routes />;
+YellowBox.ignoreWarnings([
+  'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?',
+]);
+
+export default () => <Routes />;

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { CardText, CardButton } from './styles';
+
+import { CardButton, CardText } from './styles';
 
 export default class Card extends PureComponent {
   render() {

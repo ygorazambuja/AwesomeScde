@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import socket from 'socket.io-client';
-import styled from 'styled-components/native';
 import { Text } from 'react-native';
-import CardRecado from '../components/CardRecado';
-import api from '../services/api.js';
+import CardRecado from '../../components/CardRecado';
+import api from '../../services/api.js';
+import {
+  Header,
+  BackButton,
+  Container,
+  HeaderText,
+  InputCard,
+  InputGroup,
+  InputSendButton,
+  ScrollContainer,
+} from './styles';
 
-console.ignoredYellowBox = ['Remote debugger'];
-import { YellowBox } from 'react-native';
-YellowBox.ignoreWarnings([
-  'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?',
-]);
-
+import AsyncStorage from '@react-native-community/async-storage';
 export default class Recados extends Component {
   static navigationOptions = {
     header: null,
@@ -19,16 +23,25 @@ export default class Recados extends Component {
   state = {
     recados: [],
     content: '',
+    username: '',
   };
 
   componentDidMount = () => {
     this.fetchData();
     this.subscribeToEvents();
+    this.fetchUserFromAsyncStorage();
   };
   fetchData = async () => {
     const response = await api.get('/recados');
     const recados = response.data;
     this.setState({ recados: recados });
+  };
+
+  fetchUserFromAsyncStorage = async () => {
+    const loginData = await AsyncStorage.getItem('@awesomescde:loginData');
+    const { username } = JSON.parse(loginData);
+    console.log(username);
+    this.setState({ username });
   };
 
   subscribeToEvents = () => {
@@ -43,7 +56,7 @@ export default class Recados extends Component {
 
   handleSendRecado = async () => {
     const recado = {
-      author: 'Ygor Azambuja',
+      author: this.state.username,
       content: this.state.content,
     };
     await api.post('/recado', recado);
@@ -82,66 +95,3 @@ export default class Recados extends Component {
     );
   }
 }
-const Container = styled.View`
-  background-color: #f2b632;
-  height: 100%;
-`;
-
-const Header = styled.View`
-  display: flex;
-  flex-direction: row;
-  background-color: #0e174d;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  max-height: 20%;
-  width: 100%;
-`;
-
-const HeaderText = styled.Text`
-  font-family: 'Monoton-Regular';
-  flex-direction: row;
-  justify-content: flex-end;
-  color: white;
-  font-size: 25px;
-`;
-
-const BackButton = styled.TouchableOpacity`
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 20px;
-  margin-right: 20%;
-`;
-
-const ScrollContainer = styled.ScrollView`
-  background-color: #f2b632;
-  height: 100%;
-`;
-
-const InputCard = styled.TextInput`
-  padding: 10px;
-  text-align: center;
-  font-family: 'FiraCode-Regular';
-  font-size: 10px;
-  flex-direction: row;
-  flex-grow: 2;
-  margin: 10px;
-`;
-
-const InputGroup = styled.View`
-  margin-top: 10px;
-  border-radius: 25px;
-  background-color: white;
-  flex-direction: row;
-  height: 60px;
-`;
-
-const InputSendButton = styled.TouchableOpacity`
-  background-color: #0e174d;
-  border: solid 1px;
-  border-radius: 25px;
-  width: 30%;
-  justify-content: center;
-  align-items: center;
-`;
