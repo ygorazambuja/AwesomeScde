@@ -31,6 +31,7 @@ export default class Login extends Component {
 
   fetchDataFromAsyncStorage = async () => {
     const loginData = await AsyncStorage.getItem('@awesomescde:loginData');
+    if (loginData) return;
     const login = JSON.parse(loginData);
     if (login) this.props.navigation.navigate('Home');
   };
@@ -82,7 +83,10 @@ export default class Login extends Component {
             </Button>
           </View>
           <Content style={{ justifyContent: 'center' }}>
-            <TouchableOpacity style={{ alignItems: 'center' }}>
+            <TouchableOpacity
+              style={{ alignItems: 'center' }}
+              onPress={() => this.props.navigation.navigate('Cadastro')}
+            >
               <Icon name="plus" size={20} />
               <Text>Não tem Cadastro ? </Text>
             </TouchableOpacity>
