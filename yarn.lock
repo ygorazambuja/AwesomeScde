@@ -672,22 +672,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
   integrity sha512-4zAPlpDEh2VwXswwr/t8xGNDGg8RQiPxtxZ3qQEXyQsBV39ptTdESCjuBvGze1nLMVrxmTIKmnO/nAV8Tqjjzg==
 
-<<<<<<< HEAD
-"@react-native-community/async-storage@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.5.0.tgz#647ffcd832272068b0be57332e08d73036ed391f"
-  integrity sha512-2yE4RzQ5IL+UTPhuMY0ykNRKHf1m90jOnmp8fcDPUun5U97cXlorjI4p66ovDgF0FuOv8ZpiUKvunGy3qqBxwg==
-
-"@react-navigation/core@3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.1.1.tgz#badf449ac7d2ae65b0f5aa1bf63a87e7888458d3"
-  integrity sha512-vVPUIpCWO3VKVvE5zYDDR/lOy5hHvRm60rQAHTF19vmt3Jqnbs3qqgYovfUAnTBm0crGLcuIwzOuprRIhC4bfQ==
-=======
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
   integrity sha512-iNhtIy2M8bXlAOULWVTUxmnelTLFneTNEkHCgPmgd+zNwy9zVddJ6oS5rZ9iwoscNdT5mMwUd0C51v/fSlzItg==
->>>>>>> b40efd57f09347db1e395d30c04f7767e69cbb9a
   dependencies:
     "@jest/source-map" "^24.3.0"
     chalk "^2.0.1"
@@ -829,6 +817,11 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
+
+"@react-native-community/async-storage@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.5.0.tgz#647ffcd832272068b0be57332e08d73036ed391f"
+  integrity sha512-2yE4RzQ5IL+UTPhuMY0ykNRKHf1m90jOnmp8fcDPUun5U97cXlorjI4p66ovDgF0FuOv8ZpiUKvunGy3qqBxwg==
 
 "@react-navigation/core@~3.4.1":
   version "3.4.2"
@@ -5424,9 +5417,9 @@ punycode@^2.1.0, punycode@^2.1.1:
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
-  integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
+  integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
 
 query-string@^6.4.2:
   version "6.6.0"
